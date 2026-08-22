@@ -51,7 +51,7 @@ const LoginForm = ({ onRegisterClicked }) => {
   };
 
   return (
-    <div className="flex flex-col items-stretch justify-center p-4 h-full w-full max-w-full sm:max-w-180 mx-auto">
+    <div className="flex flex-col items-stretch justify-center p-4 h-full w-full">
       <div className="font-Title text-3xl sm:text-5xl font-semibold text-center mb-4 sm:mb-8 text-primary">
         Login
       </div>

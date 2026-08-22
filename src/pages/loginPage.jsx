@@ -8,7 +8,7 @@ const LoginPage = () => {
         alt="Login Illustration"
         className="hidden md:block w-1/2 h-screen object-cover aspect-auto"
       />
-      <div className="flex flex-col items-stretch justify-center p-4 h-screen md:h-full w-full max-w-full sm:max-w-180 mx-auto">
+      <div className="flex flex-col items-stretch justify-center p-4 md:h-full w-full max-w-full sm:max-w-[560px] mx-auto">
         <LoginForm />
       </div>
     </div>

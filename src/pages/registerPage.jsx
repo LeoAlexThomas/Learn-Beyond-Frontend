@@ -8,7 +8,7 @@ const RegisterPage = () => {
         alt="Login Illustration"
         className="hidden lg:block w-1/2 h-screen object-cover aspect-auto"
       />
-      <div className="flex flex-col items-stretch justify-center p-4 md:h-full w-full max-w-full sm:max-w-180 mx-auto">
+      <div className="flex flex-col items-stretch justify-center p-4 md:h-full w-full max-w-full sm:max-w-[560px] mx-auto">
         <RegisterForm />
       </div>
     </div>
