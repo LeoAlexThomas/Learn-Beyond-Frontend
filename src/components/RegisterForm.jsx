@@ -7,12 +7,15 @@ import { PrimaryButton } from "./Buttons";
 import { Eye, EyeClosed } from "lucide-react";
 import { getUserRoleLabel, userRoles } from "../utils/commonfn";
 
+import { useNavigate } from "react-router-dom";
+
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   const { isLoading: isRegisterProcessing, makeApiCall } = useApi();
 
   const handleShowPassword = () => {
@@ -28,6 +31,11 @@ const RegisterForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!role) {
+      toast.error("Please select a role");
+      return;
+    }
+
     makeApiCall({
       url: "/auth/register",
       method: "POST",
@@ -35,6 +43,7 @@ const RegisterForm = () => {
         name,
         email,
         password,
+        role: role.value,
       },
       onSuccess: (response) => {
         if (!response) {
@@ -42,7 +51,7 @@ const RegisterForm = () => {
         }
         toast.success(response.message ?? "Registration successful");
         resetValues();
-        window.location.href = `/${response.data.id}/createProfile`;
+        navigate("/");
       },
     });
   };
