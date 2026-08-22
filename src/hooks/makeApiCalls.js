@@ -25,27 +25,27 @@ const useApi = () => {
         headers: { ...headers },
       });
       setIsLoading(false);
-      // Handling error of api call
-      if (response.success === false) {
-        console.log("API call error: ", response.message);
-        if (!onError) {
-          // Showing error toast message
-          toast.error(
-            response.message ?? "Something went wrong, please try again later",
-          );
-        } else {
-          onError(response);
-        }
-        return;
-      }
       // Handling success of api call
       console.log("API call response: ", response.data);
-      onSuccess && onSuccess(response.data);
+      if (!onSuccess) {
+        toast.success(response.data.message ?? "Success");
+      } else {
+        onSuccess(response.data);
+      }
       return response.data;
     } catch (error) {
       // Handling error of api call
       setIsLoading(false);
-      console.log("API call error: ", error);
+      console.log("API call error: ", error.response.data);
+      if (!onError) {
+        // Showing error toast message
+        toast.error(
+          error.response.data.message ??
+            "Something went wrong, please try again later",
+        );
+      } else {
+        onError(error.response.data);
+      }
       return;
     }
   };
