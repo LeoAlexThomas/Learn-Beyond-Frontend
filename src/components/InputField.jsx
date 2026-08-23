@@ -13,7 +13,7 @@ const InputField = ({
   onRightIconClicked,
 }) => {
   return (
-    <div className="flex flex-col gap-1 w-full  mx-auto">
+    <div className="flex flex-col gap-2 w-full  mx-auto">
       {!isNil(title) && (
         <p className="font-SubTitle text-base sm:text-lg font-bold text-black">
           {title} {isRequired ? <span className="text-red-400">*</span> : ""}

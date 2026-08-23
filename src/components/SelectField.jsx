@@ -99,7 +99,7 @@ const SelectField = ({
             ...provided,
             outline: "none",
             borderRadius: "16px",
-            padding: "12px",
+            padding: "10px",
             border: "1px solid #000000",
           }),
           container: (provided) => ({
@@ -109,6 +109,7 @@ const SelectField = ({
           input: (provided) => ({
             ...provided,
             width: "100%",
+            padding: "0px",
           }),
         }}
         className="bg-white appearance-none w-full flex-1 outline-none"
