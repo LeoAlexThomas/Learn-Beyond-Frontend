@@ -6,7 +6,8 @@ import StudentProfileForm from "../components/StudentProfileForm";
 import TutorProfileForm from "../components/TutorProfileForm";
 import useFetchApiCall from "../hooks/fetchApiCall";
 import HeroContent from "../components/HeroContent";
-import PopularCourses from "../components/PopularCourses";
+import PopularSubjects from "../components/PopularSubjects";
+import PopularTutors from "../components/PopularTutors";
 
 const HomePage = () => {
   // const { data, isLoading, error, mutate } = useFetchApiCall({
@@ -37,7 +38,8 @@ const HomePage = () => {
           {userInfo.role === "tutor" && <TutorProfileForm />}
         </div>
       )} */}
-      <PopularCourses />
+      <PopularSubjects />
+      <PopularTutors />
     </section>
   );
 };
