@@ -5,6 +5,7 @@ import Loading from "../components/Loading";
 import StudentProfileForm from "../components/StudentProfileForm";
 import TutorProfileForm from "../components/TutorProfileForm";
 import useFetchApiCall from "../hooks/fetchApiCall";
+import HeroContent from "../components/HeroContent";
 
 const HomePage = () => {
   const { data, isLoading, error, mutate } = useFetchApiCall({
@@ -24,8 +25,9 @@ const HomePage = () => {
   }
   const userInfo = data.data.user;
   return (
-    <section>
+    <section className="min-h-screen">
       <Header />
+      <HeroContent />
       {userInfo.isProfileCompleted ? null : (
         <div className="w-full max-w-300 mx-auto p-4">
           {userInfo.role === "student" && <StudentProfileForm />}

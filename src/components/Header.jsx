@@ -36,9 +36,13 @@ const Header = () => {
             <li className="hover:font-bold hover:underline hover:cursor-pointer">
               How it works
             </li>
-            {!isLoggedIn && <li>Login</li>}
-            <li>
-              <PrimaryButton buttonLabel="GET STARTED" fullWidth={false} />
+            {!isLoggedIn && (
+              <li className="hover:font-bold hover:underline hover:cursor-pointer">
+                Login
+              </li>
+            )}
+            <li className="hover:font-bold hover:underline hover:cursor-pointer">
+              GET STARTED
             </li>
           </ul>
         </nav>
