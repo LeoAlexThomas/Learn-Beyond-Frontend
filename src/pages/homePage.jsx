@@ -3,6 +3,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import Header from "../components/Header";
 import Loading from "../components/Loading";
 import StudentProfileForm from "../components/StudentProfileForm";
+import TutorProfileForm from "../components/TutorProfileForm";
 import useFetchApiCall from "../hooks/fetchApiCall";
 
 const HomePage = () => {
@@ -21,13 +22,14 @@ const HomePage = () => {
   if (!data) {
     return <EmptyMessage message="No data" />;
   }
-
+  const userInfo = data.data.user;
   return (
     <section>
       <Header />
-      {data.data.user.isProfileCompleted ? null : (
+      {userInfo.isProfileCompleted ? null : (
         <div className="w-full max-w-300 mx-auto p-4">
-          <StudentProfileForm />
+          {userInfo.role === "student" && <StudentProfileForm />}
+          {userInfo.role === "tutor" && <TutorProfileForm />}
         </div>
       )}
     </section>

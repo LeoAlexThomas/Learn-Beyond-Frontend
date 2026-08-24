@@ -6,17 +6,15 @@ export const removeToken = () => localStorage.removeItem(tokenName);
 
 export const userRoles = ["tutor", "student"];
 
-// export const subjects = [
-//   "Mathematics",
-//   "Science",
-//   "English",
-//   "History",
-//   "Geography",
-//   "Art",
-//   "Music",
-//   "Physical Education",
-//   "Computer Science",
-// ];
+export const defaultQualifications = [
+  { value: "SSLC", label: "SSLC" },
+  { value: "HSC", label: "HSC" },
+  { value: "Diploma", label: "Diploma" },
+  { value: "Graduation", label: "Graduation" },
+  { value: "Post Graduation", label: "Post Graduation" },
+  { value: "PhD", label: "PhD" },
+  { value: "Masters", label: "Masters" },
+];
 
 export const defaultSubjects = [
   { value: "Mathematics", label: "Mathematics" },
