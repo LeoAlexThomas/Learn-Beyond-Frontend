@@ -1,3 +1,5 @@
+import { MoveRight } from "lucide-react";
+
 const PrimaryButton = ({
   buttonLabel,
   onClick,
@@ -61,13 +63,11 @@ const SecondaryButton = ({
 const TertiaryButton = ({ buttonLabel, onClick, type, fullWidth }) => {
   return (
     <button
-      className={`bg-gray-400 hover:bg-gray-300 text-text text-base font-medium rounded-xl w-full max-w-full py-1.5 px-4 ${
-        fullWidth ? "" : "sm:max-w-fit"
-      }`}
+      className={`flex items-center justify-between gap-2 border-b border-primary text-text hover:text-primary hover:cursor-pointer text-base font-medium w-full bg-transparent`}
       type={type}
       onClick={onClick}
     >
-      {buttonLabel}
+      {buttonLabel} <MoveRight className="w-4 h-4" />
     </button>
   );
 };
