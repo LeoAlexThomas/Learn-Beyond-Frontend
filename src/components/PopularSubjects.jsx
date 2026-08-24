@@ -9,9 +9,11 @@ const courseList = [
     image:
       "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     description: "Learn the basics of HTML to create web pages.",
-    tutor: "John Doe",
-    rating: 4.5,
-    price: 99,
+    tutor: {
+      name: "John Doe",
+      rating: 4.5,
+      pricePerHour: 99,
+    },
   },
   {
     id: 2,
@@ -19,9 +21,11 @@ const courseList = [
     image:
       "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     description: "Learn the basics of CSS to style web pages.",
-    tutor: "Jane Doe",
-    rating: 4.2,
-    price: 79,
+    tutor: {
+      name: "Jane Doe",
+      rating: 4.2,
+      pricePerHour: 79,
+    },
   },
   {
     id: 3,
@@ -30,9 +34,7 @@ const courseList = [
       "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     description:
       "Learn the basics of JavaScript to create interactive web pages.",
-    tutor: "John Doe",
-    rating: 4.7,
-    price: 89,
+    tutor: { name: "John Doe", rating: 4.7, pricePerHour: 89 },
   },
   {
     id: 4,
@@ -40,9 +42,7 @@ const courseList = [
     image:
       "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     description: "Learn the basics of React to build user interfaces.",
-    tutor: "Jane Doe",
-    rating: 4.3,
-    price: 109,
+    tutor: { name: "Jane Doe", rating: 4.3, pricePerHour: 109 },
   },
   {
     id: 5,
@@ -51,9 +51,7 @@ const courseList = [
       "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     description:
       "Learn the basics of Node.js to build server-side applications.",
-    tutor: "John Doe",
-    rating: 4.6,
-    price: 99,
+    tutor: { name: "John Doe", rating: 4.6, pricePerHour: 99 },
   },
   {
     id: 6,
@@ -62,22 +60,20 @@ const courseList = [
       "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
     description:
       "Learn the basics of Express.js to build server-side applications.",
-    tutor: "Jane Doe",
-    rating: 4.4,
-    price: 79,
+    tutor: { name: "Jane Doe", rating: 4.4, pricePerHour: 79 },
   },
 ];
 
-const PopularCourses = () => {
+const PopularSubjects = () => {
   return (
     <div className="flex flex-col gap-8 items-center justify-center w-full max-w-300 mx-auto p-4">
-      <h1 className="text-2xl sm:text-3xl font-Title font-bold text-primary">
-        POPULAR COURSES
+      <h1 className="text-2xl sm:text-3xl font-Title font-bold text-primary text-center">
+        POPULAR SUBJECTS
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {courseList.map((course) => (
-          <Fragment key={course.id}>
-            <CourseCard course={course} />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {courseList.map((subject) => (
+          <Fragment key={subject.id}>
+            <SubjectCard subject={subject} />
           </Fragment>
         ))}
       </div>
@@ -88,28 +84,28 @@ const PopularCourses = () => {
   );
 };
 
-const CourseCard = ({ course }) => {
+const SubjectCard = ({ subject }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-between items-start h-full gap-4">
       <img
-        src={course.image}
-        alt={course.title}
+        src={subject.image}
+        alt={subject.title}
         className="w-full h-48 object-cover rounded-lg"
       />
-      <h2 className="text-lg font-semibold">{course.title}</h2>
-      <p className="text-gray-600">{course.description}</p>
+      <h2 className="text-lg font-semibold">{subject.title}</h2>
+      <p className="text-gray-600">{subject.description}</p>
       <div className="flex gap-4 items-center justify-between w-full">
         <TextWithIcon
           icon={<User className="w-4 h-4 text-primary" />}
-          text={`${course.tutor}`}
+          text={`${subject.tutor.name}`}
         />
         <TextWithIcon
           icon={<Star className="w-4 h-4 text-[#FDCC0D]" />}
-          text={`${course.rating}`}
+          text={`${subject.tutor.rating}`}
         />
         <TextWithIcon
           icon={<ReceiptIndianRupee className="w-4 h-4 text-primary" />}
-          text={`${course.price}`}
+          text={`${subject.tutor.pricePerHour}/hour`}
         />
       </div>
       <PrimaryButton buttonLabel="Enroll Now" fullWidth onClick={() => {}} />
@@ -126,4 +122,4 @@ const TextWithIcon = ({ icon, text }) => {
   );
 };
 
-export default PopularCourses;
+export default PopularSubjects;
