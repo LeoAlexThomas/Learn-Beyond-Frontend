@@ -1,6 +1,6 @@
 const HeroContent = () => {
   return (
-    <hero className="flex flex-row gap-4 items-center justify-start h-full w-full max-w-300 mx-auto relative">
+    <div className="flex flex-row gap-4 items-center justify-start h-full w-full max-w-300 mx-auto relative">
       <img
         src="/images/hero_illustration_desktop.png"
         alt="Hero Illustration"
@@ -24,7 +24,7 @@ const HeroContent = () => {
           learning.
         </p>
       </div>
-    </hero>
+    </div>
   );
 };
 
