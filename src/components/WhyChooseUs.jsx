@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-accent">
+    <div className="bg-border">
       <div className="flex flex-col gap-8 items-center justify-center w-full max-w-300 mx-auto p-4">
-        <h1 className="text-2xl sm:text-3xl font-Title font-bold text-background text-center">
+        <h1 className="text-2xl sm:text-3xl font-Title font-bold text-text text-center">
           Why Choose Us
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
 
 const Card = ({ title, description }) => {
   return (
-    <div className="flex flex-col gap-2 items-start justify-stretch w-full max-w-80 mx-auto p-4 bg-primary rounded-xl shadow-lg">
+    <div className="flex flex-col gap-2 items-start justify-stretch w-full max-w-80 mx-auto p-4 bg-accent rounded-xl shadow-lg">
       <h4 className="text-xl sm:text-2xl font-Title font-bold text-background">
         {title}
       </h4>
