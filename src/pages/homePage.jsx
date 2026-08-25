@@ -8,6 +8,7 @@ import useFetchApiCall from "../hooks/fetchApiCall";
 import HeroContent from "../components/HeroContent";
 import PopularSubjects from "../components/PopularSubjects";
 import PopularTutors from "../components/PopularTutors";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 const HomePage = () => {
   // const { data, isLoading, error, mutate } = useFetchApiCall({
@@ -40,6 +41,7 @@ const HomePage = () => {
       )} */}
       <PopularSubjects />
       <PopularTutors />
+      <WhyChooseUs />
     </section>
   );
 };
