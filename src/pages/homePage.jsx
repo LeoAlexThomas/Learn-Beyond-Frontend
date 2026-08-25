@@ -1,14 +1,9 @@
-import EmptyMessage from "../components/EmptyMessage";
-import ErrorMessage from "../components/ErrorMessage";
 import Header from "../components/Header";
-import Loading from "../components/Loading";
-import StudentProfileForm from "../components/StudentProfileForm";
-import TutorProfileForm from "../components/TutorProfileForm";
-import useFetchApiCall from "../hooks/fetchApiCall";
 import HeroContent from "../components/HeroContent";
 import PopularSubjects from "../components/PopularSubjects";
 import PopularTutors from "../components/PopularTutors";
 import WhyChooseUs from "../components/WhyChooseUs";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   // const { data, isLoading, error, mutate } = useFetchApiCall({
@@ -41,7 +36,10 @@ const HomePage = () => {
       )} */}
       <PopularSubjects />
       <PopularTutors />
-      <WhyChooseUs />
+      <div>
+        <WhyChooseUs />
+        <Footer />
+      </div>
     </section>
   );
 };
