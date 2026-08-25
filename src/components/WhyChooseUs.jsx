@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const WhyChooseUs = () => {
   return (
     <div className="bg-border">
-      <div className="flex flex-col gap-8 items-center justify-center w-full max-w-300 mx-auto p-4">
+      <div className="flex flex-col gap-8 items-center justify-center w-full max-w-300 mx-auto px-4 py-20">
         <h1 className="text-2xl sm:text-3xl font-Title font-bold text-text text-center">
           Why Choose Us
         </h1>
